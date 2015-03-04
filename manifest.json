@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Browser Fullscreen",
+    "description": "Makes page fullscreen using browser API",
+    "version": "0.1",
+    "permissions": [
+        "<all_urls>"
+    ],
+    "browser_action": {
+        "default_title": "Toggle Fullscreen"
+    },
+	"background": {
+		"scripts": [
+			"src/script.js"
+		]
+	},
+	"content_scripts": [{
+        "all_frames": false,
+        "js": ["src/script.js"],
+        "run_at": "document_idle",
+        "matches": ["<all_urls>"]
+    }]
+}
